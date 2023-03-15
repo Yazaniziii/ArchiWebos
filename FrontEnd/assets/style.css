@@ -126,6 +126,32 @@ li:hover {
 	margin-bottom: 1em;
 }
 
+.portfolio-btn {
+	width: 100%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	column-gap: 10px;
+	margin-bottom: 3rem;
+}
+
+.portfolio-btn button {
+	background-color: #fff;
+	color: #1D6154;
+	cursor: pointer;
+	outline: none;
+	min-width: 100px;
+	border-radius: 60px;
+	border: 1px solid #1D6154;
+	font-weight: 700;
+	font-family: 'Syne', sans-serif;
+}
+
+.portfolio-btn button:active {
+	background-color: #1D6154;
+	color: #fff;
+}
+
 .gallery {
 	width: 100%;
 	display: grid;
