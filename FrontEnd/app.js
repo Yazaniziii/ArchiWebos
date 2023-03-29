@@ -1,4 +1,4 @@
-let URLWorks = "http://localhost:5678/api/works";
+const URLWorks = "http://localhost:5678/api/works";
 
 const gallery = document.querySelector('.gallery')
 const btns = document.querySelectorAll('.portfolio-btn button')
@@ -74,3 +74,9 @@ fetch(URLWorks)
             }
         })
     })
+
+
+
+    
+
+
