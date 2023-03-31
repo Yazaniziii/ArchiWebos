@@ -3,7 +3,7 @@ const URLWorks = "http://localhost:5678/api/works";
 const gallery = document.querySelector('.gallery')
 const btns = document.querySelectorAll('.portfolio-btn button')
 
-
+function filter () {
 // Appel à l'API Works
 fetch(URLWorks)
     .then(function(res) {
@@ -74,6 +74,9 @@ fetch(URLWorks)
             }
         })
     })
+}
+filter();
+
 
 
 
