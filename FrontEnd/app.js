@@ -77,9 +77,32 @@ fetch(URLWorks)
 }
 filter();
 
+// Vérification de la présence du token et de l'userId dans le stockage local
+if (localStorage.getItem('token') && localStorage.getItem('userId')) {
+    // Boucle pour faire apparaître tous les éléments avec la classe "display-on-login"
+    const displayOnLoginElems = document.querySelectorAll(".display-on-login");
+    displayOnLoginElems.forEach(elem => {
+        elem.style.display = "flex";
+    });
+    // Cacher le Login
+    const loginLinkElem = document.querySelector(".log");
+    loginLinkElem.style.display = "none";
 
+    // Cacher les boutons filtres
+    const portfolioBtnElem = document.querySelector(".portfolio-btn");
+    portfolioBtnElem.style.display = "none";
+}
 
+const logOut = document.querySelector('.logout');
 
+logOut.addEventListener('click', () => {
+    // Supprimez les informations de connexion stockées localement
+    localStorage.removeItem('token');
+    localStorage.removeItem('userId');
+    
+    // Redirigez l'utilisateur vers la page de connexion ou la page d'accueil
+    window.location.replace('index.html');
+  });
     
 
 

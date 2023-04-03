@@ -41,9 +41,12 @@ function connexionListener() {
         // Rediriger l'utilisateur vers la page principale
         window.location.replace('index.html');
         })
+
     })
 }
 connexionListener();
+
+
 
 
 

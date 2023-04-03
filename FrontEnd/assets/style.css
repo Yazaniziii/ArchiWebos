@@ -298,10 +298,6 @@ footer nav ul {
 	margin: 0;
 }
 
-.logout {
-	display: none;
-}
-
 .form-log {
 	display: flex;
 	flex-direction: column;
@@ -388,7 +384,7 @@ footer nav ul {
 	position: fixed;
 	top: 0;
 	left: 0;
-	
+	display: none;
 }
 
 .modal-wrapper {
@@ -434,7 +430,7 @@ footer nav ul {
 	object-fit: cover;
 }
 
-.modal-galery figure a {
+.modal-galery figure button {
 	position: absolute;
 	display: flex;
 	column-gap: 0.5em;
@@ -445,6 +441,19 @@ footer nav ul {
 	padding: 0.2em;
 	border-radius: 0.2em;
 	text-align: center;
+	border: none;
+	cursor: pointer;
+}
+
+.modal-galery figure div {
+	position: absolute;
+	display: flex;
+	right: 27px;
+	top: 5px;
+	color: white;
+	padding: 0.2em 0.1em;
+	background-color: black;
+	border-radius: 0.2em;
 }
 
 .modal-galery figure figcaption {
@@ -483,4 +492,8 @@ footer nav ul {
 	font-family: 'Syne', sans-serif;
 	width: 17em;
 	cursor: pointer;
+}
+
+.display-on-login {
+	display: none;
 }

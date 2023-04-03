@@ -15,8 +15,8 @@
 	<link rel="stylesheet" href="./assets/style.css">
 </head>
 <body>
-	<div class="modal-change">
-		<a href="" class="js-modal modal-change-icone">
+	<div class="modal-change display-on-login">
+		<a href="" class="modal-change-icone">
 			<i class="far fa-light fa-pen-to-square"></i>
 		</a>
         <p>Mode édition</p>
@@ -29,99 +29,22 @@
 			<li><a href="#portfolio">projets</a></li>
 			<li><a href="#contact">contact</a></li>
 			<li class="log"><a href="login.html">login</a></li>
-			<li class="logout">logout</li>
+			<li class="logout display-on-login">logout</li>
 			<li><img src="./assets/icons/instagram.png" alt="Instagram"></li>
 		</ul>
 	</nav>
 </header>
 <main>
 
-	<section class="modal">
-		<div class="modal-wrapper" aria-hidden="true" role="dialog" aria-modal="false">
+	<section id="modal" class="modal">
+		<div class="modal-wrapper js-modal-stop" aria-hidden="true" role="dialog" aria-modal="false">
 			<div class="modal-delete">
 				<i class="fa-solid fa-xmark"></i>
 			</div>
 			<h3 class="modal-title">Galerie photo</h3>
 			<div class="modal-container">
 				<div class="modal-galery">
-					<figure>
-						<img src="./assets/images/abajour-tahina.png" alt="">
-						<a href="">
-							<i class="fa-solid fa-arrows-up-down-left-right"></i>
-							<i class="fa-regular fa-trash-can"></i>
-						</a>
-						<figcaption>éditer</figcaption>
-					</figure>
-					<figure>
-						<img src="./assets/images/appartement-paris-v.png" alt="">
-						<a href="">
-							<i class="fa-regular fa-trash-can"></i>
-						</a>
-						<figcaption>éditer</figcaption>
-					</figure>
-					<figure>
-						<img src="./assets/images/restaurant-sushisen-londres.png" alt="">
-						<a href="">
-							<i class="fa-regular fa-trash-can"></i>
-						</a>
-						<figcaption>éditer</figcaption>
-					</figure>
-					<figure>
-						<img src="./assets/images/la-balisiere.png" alt="">
-						<a href="">
-							<i class="fa-regular fa-trash-can"></i>
-						</a>
-						<figcaption>éditer</figcaption>
-					</figure>
-					<figure>
-						<img src="./assets/images/structures-thermopolis.png" alt="">
-						<a href="">
-							<i class="fa-regular fa-trash-can"></i>
-						</a>
-						<figcaption>éditer</figcaption>
-					</figure>
-					<figure>
-						<img src="./assets/images/appartement-paris-x.png" alt="">
-						<a href="">
-							<i class="fa-regular fa-trash-can"></i>
-						</a>
-						<figcaption>éditer</figcaption>
-					</figure>
-					<figure>
-						<img src="./assets/images/le-coteau-cassis.png" alt="">
-						<a href="">
-							<i class="fa-regular fa-trash-can"></i>
-						</a>
-						<figcaption>éditer</figcaption>
-					</figure>
-					<figure>
-						<img src="./assets/images/villa-ferneze.png" alt="">
-						<a href="">
-							<i class="fa-regular fa-trash-can"></i>
-						</a>
-						<figcaption>éditer</figcaption>
-					</figure>
-					<figure>
-						<img src="./assets/images/appartement-paris-xviii.png" alt="">
-						<a href="">
-							<i class="fa-regular fa-trash-can"></i>
-						</a>
-						<figcaption>éditer</figcaption>
-					</figure>
-					<figure>
-						<img src="./assets/images/bar-lullaby-paris.png" alt="">
-						<a href="">
-							<i class="fa-regular fa-trash-can"></i>
-						</a>
-						<figcaption>éditer</figcaption>
-					</figure>
-					<figure>
-						<img src="./assets/images/hotel-first-arte-new-delhi.png" alt="">
-						<a href="">
-							<i class="fa-regular fa-trash-can"></i>
-						</a>
-						<figcaption>éditer</figcaption>
-					</figure>
+					
 				</div>
 				<div class="modal-ligne"></div>
 				<div class="modal-button-container">
@@ -148,7 +71,7 @@
 	<section id="portfolio">
 		<div class="portfolio-modif">
 			<h2>Mes Projets</h2>
-			<a href="" class="js-modal ">
+			<a href="#modal" class="js-modal display-on-login">
 				<i class="far fa-pen-to-square"></i>
 				modifier
 			</a>
@@ -187,5 +110,6 @@
 </footer>
 <script src="app.js"></script>
 <script src="modal.js"></script>
+<script src="delete.js"></script>
 </body>
 </html>
