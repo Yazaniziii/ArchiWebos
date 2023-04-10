@@ -1,6 +1,7 @@
 const modalWrapper = document.querySelector(".modal-wrapper");
 const modalGalery = document.querySelector(".modal-galery");
 const token = localStorage.getItem('token');
+const userId = localStorage.getItem('userId')
 
 let modal = null;
 
@@ -177,33 +178,36 @@ inputPhoto.addEventListener("change", () => {
 });
 
 // Ajout d'un écouteur d'événement sur le bouton de validation pour l'envoi du formulaire
-buttonValider.addEventListener("click", (e) => {
+myForm.addEventListener("submit", (e) => {
   e.preventDefault();
 
   // Vérification de la validité du formulaire
   if (inputPhoto.value && inputTitle.value && selectCategorie.value) {
     // Création d'un objet FormData pour l'envoi du formulaire
     const formData = new FormData();
-    formData.append("image", inputPhoto.files[0]);
+    formData.append("image", inputPhoto.files[0], inputPhoto.files[0].name);
     formData.append("title", inputTitle.value);
     formData.append("category", selectCategorie.value);
-
+    console.log(formData.get("image"));
+    console.log(formData.get("title"));
+    console.log(formData.get("category"));
     // Envoi du formulaire à l'API
     fetch("http://localhost:5678/api/works", {
       method: "POST",
       headers: {
-        Authorization: `Bearer ${token}`, // Ajoute le token dans l'en-tête d'autorisation
+        'accept' : 'application/json', 
+        'Authorization' : `Bearer ${token}`, // Ajoute le token dans l'en-tête d'autorisation
       },
       body: formData,
     })
-      .then((response) => response.json())
-      .then((data) => {
-        console.log(data); // Affichage de la réponse de l'API
-        closeModal1(); // Fermeture de la modal d'ajout
+      .then(function(res){
+        console.log(res);
       })
+      
       .catch((error) => console.error(error));
   } else {
     // Affichage d'un message d'erreur si le formulaire n'est pas correctement rempli
     alert("Veuillez remplir tous les champs du formulaire.");
   }
 });
+
