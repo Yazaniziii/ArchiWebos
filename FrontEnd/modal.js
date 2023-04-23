@@ -5,6 +5,7 @@ const userId = localStorage.getItem('userId')
 
 let modal = null;
 
+// Function Ouvrir Modal
 const openModal = function (e) {
   e.preventDefault();
   const target = document.querySelector(e.target.getAttribute("href"));
@@ -19,6 +20,7 @@ const openModal = function (e) {
     .addEventListener("click", stopPropagation);
 };
 
+// Function Fermer Modal
 const closeModal = function (e) {
   if (modal === null) {
     return;
@@ -39,10 +41,12 @@ const stopPropagation = function (e) {
   e.stopPropagation();
 };
 
+//Ecouteur D'evenement Ouvrir Modal
 document.querySelectorAll(".js-modal").forEach((a) => {
   a.addEventListener("click", openModal);
 });
 
+// Appel à L'API quand le Modal est ouvert
 document.querySelector(".js-modal").addEventListener("click", function () {
   modalGalery.innerHTML = "";
   fetch(URLWorks)
@@ -75,6 +79,7 @@ document.querySelector(".js-modal").addEventListener("click", function () {
                     </figure>`;
         }
 
+        // Ecouteur d'Evenement + Appel à l'Api Supprimer Projet
         modalGalery.addEventListener("click", function (e) {
           if (e.target.classList.contains("fa-trash-can")) {
             const idToDelete = e.target
